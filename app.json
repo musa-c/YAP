@@ -1,12 +1,20 @@
 {
   "expo": {
     "name": "YAP",
-    "slug": "YAP",
+    "slug": "yap",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "YAP Uygulamasının galerinize erişmenize izin verin."
+        }
+      ]
+    ],
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash1.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,16 +25,32 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "YAP Uygulamasının galerinize erişmenize izin verin.",
+        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera",
+        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to access your microphone"
+      },
+      "bundleIdentifier": "com.mc.yap",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.mc.yap",
+      "versionCode": 1 
+      
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon1.png"
     }
   }
 }
